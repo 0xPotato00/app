@@ -3,6 +3,11 @@ import { FC } from 'react'
 
 export interface InputProps {
     className?: string
+    required?: boolean
+    type?: string
+    placeholder?: string
+    value?: string
+    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 const Input: FC<InputProps> = ({ className, ...props }) => {
