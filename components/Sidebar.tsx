@@ -2,6 +2,11 @@ import Card from './Card'
 import Image from 'next/image'
 import logo from '@/assets/images/logo.png'
 import SidebarLink from './SidebarLink'
+import { FC } from 'react'
+
+export interface SidebarProps {
+    children?: React.ReactNode
+}
 
 const links = [
     { label: 'Home', icon: 'Grid', link: '/home' },
@@ -18,7 +23,7 @@ const links = [
     },
 ]
 
-const Sidebar = () => {
+const Sidebar: FC<SidebarProps> = () => {
     return (
         <Card className="h-full w-40 flex items-center justify-between flex-wrap">
             <div className="w-full flex justify-center items-center">

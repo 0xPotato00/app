@@ -3,10 +3,18 @@ import Link from 'next/link'
 import { Settings, User, Grid, Calendar } from 'react-feather'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'
+import { FC } from 'react'
 
 const icons = { Settings, User, Grid, Calendar }
 
-const SidebarLink = ({ link }) => {
+export interface SidebarLinkProps {
+    link: {
+        link: string
+        icon: string
+    }
+}
+
+const SidebarLink: FC<SidebarLinkProps> = ({ link }) => {
     const pathname = usePathname()
     let isActive = false
 
